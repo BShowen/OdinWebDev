@@ -1,5 +1,6 @@
 body {
     font-family: 'Courier New', Courier, monospace;
+    color: darkslategrey;
 }
 
 ul {
@@ -13,6 +14,9 @@ li {
     display: inline-block;
     width: 50px;
     font-size: 12px;
+}
+.center {
+    padding-top: 5px;
 }
 
 .move-right {
@@ -49,4 +53,21 @@ button {
     margin: 5px;
     height: 40px;
     width: 150px;
+}
+
+footer {
+    position: fixed;
+    width: 100%;
+    height:40px;
+    bottom: 0;
+    background-color: hsla(0, 0%, 83%, 0.5);
+}
+
+footer ul li {
+    margin: 15px;
+}
+
+#bell {
+    padding-top: 0;
+    margin-top: 10px;
 }
