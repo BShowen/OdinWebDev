@@ -1,0 +1,52 @@
+body {
+    font-family: 'Courier New', Courier, monospace;
+}
+
+ul {
+    list-style-type: none;
+    margin: 0;
+    padding: 0;
+    height: 50px;
+}
+
+li {
+    display: inline-block;
+    width: 50px;
+    font-size: 12px;
+}
+
+.move-right {
+    float: right;
+}
+
+main {
+    text-align: center;
+}
+
+
+.center {
+    margin: 0 auto;
+}
+
+#google-image {
+    margin: 30px auto;
+    border-radius: 30px;
+    background-color: yellow;
+    width: 400px;
+    height: 200px;
+}
+
+input {
+    width: 550px;
+    height: 45px;
+    margin-top: 0px;
+    margin-bottom: 20px;
+}
+
+button {
+    border-radius: 0px;
+    border: none;
+    margin: 5px;
+    height: 40px;
+    width: 150px;
+}
