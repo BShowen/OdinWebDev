@@ -8,7 +8,26 @@
 </head>
 <body>
     <script>
+        function add7(value) {
+            return value + 7;
+        }
+
+        const multiply = (value1, value2) => value1 * value2;
+
+        function capitalize(word) {
+            wordTemp = word.toLowerCase();
+            wordArr = wordTemp.split('');
+            wordArr[0] = wordArr[0].toUpperCase();
+            wordCapitalized = wordArr.join('');
+            return wordCapitalized;
+        }
+
+        const lastLetter = function(word) {
+            return word[word.length - 1];
+        }
+
         
+        console.log(lastLetter("Tyler"));
     </script>
 </body>
 </html>
