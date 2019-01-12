@@ -15,9 +15,30 @@
         }
     
         function gamePlay(playerSelection, computerSelection) {
-            //left off on step 4
+            playerSelection = playerSelection.toLowerCase();
+            if (playerSelection === 'rock' && computerSelection === 'scissors') {
+                return "You Win! Rock beats scissors!";
+            } else if (playerSelection === 'rock' && computerSelection === 'paper'){
+                return "You Lose! Paper beats rock!";
+            } else if (playerSelection === 'rock' && computerSelection === 'rock') {
+                return "It's a draw!";
+            } else if (playerSelection === 'scissors' && computerSelection === 'scissors') {
+                return "It's a draw!";
+            } else if (playerSelection === 'scissors' && computerSelection === 'paper') {
+                return "You win! Scissors beats paper!";
+            } else if (playerSelection === 'scissors' && computerSelection === 'rock') {
+                return "You lose! rock beats scissors!";
+            } else if (playerSelection === 'paper' && computerSelection === 'scissors') {
+                return "You lose! Scissors beats paper!";    
+            } else if (playerSelection === 'paper' && computerSelection === 'rock') {
+                return "You Win! Paper beats rock!";
+            } else if (playerSelection === 'paper' && computerSelection === 'paper') {
+                return "It's a draw!";
+            } else {
+                return "error";
+            }
         }
-        console.log(computerPlay());
+        console.log(gamePlay("Rock", computerPlay()));
     
     </script>
 </body>
