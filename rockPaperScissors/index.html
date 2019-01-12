@@ -28,9 +28,9 @@
                 computerScore++;
                 return "You Lose! Paper beats rock!";
             } else if (playerSelection === 'rock' && computerSelection === 'rock') {
-                return "It's a draw!";
+                return "It's a draw! Rock vs rock.";
             } else if (playerSelection === 'scissors' && computerSelection === 'scissors') {
-                return "It's a draw!";
+                return "It's a draw! Scissors vs scissors.";
             } else if (playerSelection === 'scissors' && computerSelection === 'paper') {
                 playerScore++;
                 return "You win! Scissors beats paper!";
@@ -44,7 +44,7 @@
                 playerScore++;
                 return "You Win! Paper beats rock!";
             } else if (playerSelection === 'paper' && computerSelection === 'paper') {
-                return "It's a draw!";
+                return "It's a draw! Paper vs paper.";
             } else {
                 return "error";
             }
@@ -56,15 +56,15 @@
                 console.log(`Round: ${round} `);
                 round++;
                 let playerSelection = prompt("Please choose rock, paper, or scissors.");
-                return gamePlay(playerSelection, computerPlay());
+                console.log(gamePlay(playerSelection, computerPlay()));
             }
 
             if (playerScore > computerScore) {
-                return "Player Wins Match!";
+                return "Player Wins Match!" + playerScore + ":" + computerScore;
             } else if (playerScore < computerScore) {
-                return "Computer Wins Match!";
+                return "Computer Wins Match! " + playerScore + ":" + computerScore;
             } else {
-                return "Match is a draw!";
+                return "Match is a draw!" + playerScore + ":" + computerScore;
             }
         }
 
