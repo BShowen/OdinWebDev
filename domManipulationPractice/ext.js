@@ -5,9 +5,13 @@ const para = document.createElement('p');
 para.textContent = "Hey I'm Red!";
 para.style.color = "red";
 
+container.appendChild(para);
+
 const h3 = document.createElement("h3");
 h3.textContent = "I'm a blue h3!";
 h3.style.color = 'blue';
+
+container.appendChild(h3);
 
 const content = document.createElement('div');
 content.classList.add('content');
@@ -21,7 +25,12 @@ secondPara.textContent = "me too!";
 
 content.appendChild(h1);
 content.appendChild(secondPara);
-
-container.appendChild(para);
-container.appendChild(h3);
 container.appendChild(content);
+
+const btn = document.querySelector("#btn");
+btn.onclick = () => alert("HELLO World!");
+
+const btn2 = document.querySelector("#btn2");
+btn2.addEventListener('click', function(e) {
+    e.target.style.background = 'blue'; 
+});
