@@ -1,4 +1,5 @@
 
+const message = document.querySelector("#game-message");
 
 let playerScore = 0;
 let computerScore = 0;
@@ -41,15 +42,15 @@ function gamePlay(playerSelection, computerSelection) {
     }
 }
 
-function game() {
-    while (round <= 5) {
-        console.log(`Current score: Player ${playerScore}, Computer ${computerScore}`);
-        console.log(`Round: ${round} `);
-        round++;
-        let playerSelection = prompt("Please choose rock, paper, or scissors.");
-        console.log(gamePlay(playerSelection, computerPlay()));
-    }
+function game(playerSelection) {
+    
+    console.log(`Round: ${round} `);
+    round++;
+    // let playerSelection = prompt("Please choose rock, paper, or scissors.");
+    //console.log(gamePlay(playerSelection, computerPlay()));
+    message.textContent = `${gamePlay(playerSelection, computerPlay())}` + <br> + "testing";
 
+    console.log(`Current score: Player ${playerScore}, Computer ${computerScore}`);
     if (playerScore > computerScore) {
         return "Player Wins Match!" + playerScore + ":" + computerScore;
     } else if (playerScore < computerScore) {
@@ -57,6 +58,17 @@ function game() {
     } else {
         return "Match is a draw!" + playerScore + ":" + computerScore;
     }
+    
 }
 
-console.log(game());
+// Call game function when html buttons are clicked
+const buttons = document.querySelectorAll('button');
+buttons.forEach((item) => {
+    // Target the individual button names, pass as playerSelection
+    item.addEventListener('click', (e) => {
+        game(e.target.name);
+    });
+    
+});
+
+// console.log(buttons);
