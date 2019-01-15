@@ -6,6 +6,7 @@ window.addEventListener("keydown", function(e) {
     // Declare a key var to access divs with a class of key
     const key = document .querySelector(`.key[data-key="${e.keyCode}"]`);
 
+
     // Account for a key not having a data-key attribute
     if (!audio) { return };
 
@@ -16,6 +17,25 @@ window.addEventListener("keydown", function(e) {
     // play the audio file
     audio.play();
 
+    // Animate button on key press
+    key.classList.add("playing");
 
-    // console.log(audio);
+    
+    // console.log(key);
 });
+
+// Remove animation from key
+function removeTransition(e) {
+    // Filter out all unecessary transitions
+    if (e.propertyName !== 'transform') return;
+    
+    // REmove the playing class the key that calls this function
+    this.classList.remove('playing');
+}
+
+// Remove animation from key - first find each each on page
+const keys = document.querySelectorAll(".key");
+// Listen for a transition end on each key, so that we can remove the playing class
+keys.forEach(key => key.addEventListener("transitionend", removeTransition));
+
+
