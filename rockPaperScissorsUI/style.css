@@ -4,11 +4,24 @@
 }
 
 .btn {
-    margin: 30px;
-    
+    margin: 20px auto; 
+}
+
+#btn-wrapper {
+    margin: 0 auto;
+    width: 50%;
 }
 
 p {
     margin: 0;
     text-align: center;
+}
+
+h2 {
+    text-align: center;
+}
+
+#win-message {
+    margin-top: 20px;
+    font-size: 2em;
 }

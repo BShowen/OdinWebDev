@@ -1,5 +1,6 @@
 
 const message = document.querySelector("#game-message");
+const winMessage = document.querySelector('#win-message');
 const lineBreak = document.createElement("br");
 const currentRound = document.querySelector('#round');
 
@@ -12,22 +13,11 @@ currentRound.textContent = `Round ${round}`;
 
 // Called onclick event
 function game(playerSelection) {
+    
     round++;
     currentRound.textContent = `Round ${round}`;
 
     gamePlay(playerSelection, computerPlay());
-
-    // if (playerScore > computerScore) {
-    //     message.innerHTML = "Player Wins Match!" + `${gamePlay(playerSelection, computerPlay())} ` + 
-    //     `<br>` + `Your Score: ${playerScore}` + `<br>` + `Computer Score: ${computerScore}`;
-    // } else if (playerScore < computerScore) {
-    //     message.innerHTML = "Computer Wins Match! " +`${gamePlay(playerSelection, computerPlay())} ` + 
-    //     `<br>` + `Your Score: ${playerScore}` + `<br>` + `Computer Score: ${computerScore}`;
-    // } else {
-    //     message.innerHTML = "Match is a Draw! " +`${gamePlay(playerSelection, computerPlay())} ` + 
-    //     `<br>` + `Your Score: ${playerScore}` + `<br>` + `Computer Score: ${computerScore}`;
-    // }
-    
 }
 
 function gamePlay(playerSelection, computerSelection) {
@@ -69,6 +59,8 @@ function gamePlay(playerSelection, computerSelection) {
     } else {
         return "error";
     }
+
+    isThereAWinner();
 }
 
 function computerPlay() {
@@ -77,6 +69,17 @@ function computerPlay() {
     return options[randomOption];
 }
 
+const isThereAWinner = () => {
+    if ( playerScore >= 5 || computerScore >= 5) {
+        if (playerScore > computerScore){
+            winMessage.textContent = "You Won the Match!";
+        } else if (playerScore < computerScore){
+            winMessage.textContent = "The Computer Won the Match!";
+        } else {
+            winMessage.textContent = "The match was a draw!";
+        }
+    }
+}
 
 // Call game function when html buttons are clicked
 const buttons = document.querySelectorAll('button');
@@ -87,5 +90,3 @@ buttons.forEach((item) => {
     });
     
 });
-
-// console.log(buttons);
