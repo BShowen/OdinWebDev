@@ -6,6 +6,21 @@ const script = document.querySelector('script');
 container.setAttribute("id", "container");
 body.insertBefore(container, script);
 
+// Add reset button to top
+const btn = document.createElement('button');
+btn.textContent = "Reset";
+container.appendChild(btn);
+btn.addEventListener('click', (e) => {
+    gridCells.forEach((gridCell) => {
+        gridCell.style.background = 'blue';
+    });
+});
+
+// add div grid container
+const gridContainer = document.createElement('div');
+gridContainer.setAttribute('id', 'gridContainer');
+container.appendChild(gridContainer);
+
 // create 16 x 16 divs
 for ( let x = 0; x < 16; x++) {
     const divRow = document.createElement('div');
@@ -15,7 +30,7 @@ for ( let x = 0; x < 16; x++) {
         gridCell.classList.add('gridCell');
         divRow.appendChild(gridCell);
     }
-    container.appendChild(divRow);
+    gridContainer.appendChild(divRow);
 }
 
 // change color of grid cells on mouse hover
@@ -33,4 +48,3 @@ gridCells.forEach((gridCell) => {
     })
 });
 
-// Enable reset button
