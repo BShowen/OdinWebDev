@@ -1,9 +1,14 @@
 
 const message = document.querySelector("#game-message");
+const lineBreak = document.createElement("br");
+const currentRound = document.querySelector('#round');
 
 let playerScore = 0;
 let computerScore = 0;
 let round = 1;
+
+// render html round 1
+currentRound.textContent = `Round ${round}`;
 
 function computerPlay() {
     options = ['rock', 'paper', 'scissors'];
@@ -43,20 +48,19 @@ function gamePlay(playerSelection, computerSelection) {
 }
 
 function game(playerSelection) {
-    
-    console.log(`Round: ${round} `);
     round++;
-    // let playerSelection = prompt("Please choose rock, paper, or scissors.");
-    //console.log(gamePlay(playerSelection, computerPlay()));
-    message.textContent = `${gamePlay(playerSelection, computerPlay())}` + <br> + "testing";
+    currentRound.textContent = `Round ${round}`;
 
-    console.log(`Current score: Player ${playerScore}, Computer ${computerScore}`);
+    
     if (playerScore > computerScore) {
-        return "Player Wins Match!" + playerScore + ":" + computerScore;
+        message.innerHTML = "Player Wins Match!" + `${gamePlay(playerSelection, computerPlay())} ` + 
+        `<br>` + `Your Score: ${playerScore}` + `<br>` + `Computer Score: ${computerScore}`;
     } else if (playerScore < computerScore) {
-        return "Computer Wins Match! " + playerScore + ":" + computerScore;
+        message.innerHTML = "Computer Wins Match! " +`${gamePlay(playerSelection, computerPlay())} ` + 
+        `<br>` + `Your Score: ${playerScore}` + `<br>` + `Computer Score: ${computerScore}`;
     } else {
-        return "Match is a draw!" + playerScore + ":" + computerScore;
+        message.innerHTML = "Match is a Draw! " +`${gamePlay(playerSelection, computerPlay())} ` + 
+        `<br>` + `Your Score: ${playerScore}` + `<br>` + `Computer Score: ${computerScore}`;
     }
     
 }
