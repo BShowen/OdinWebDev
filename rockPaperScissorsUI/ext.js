@@ -20,28 +20,37 @@ function gamePlay(playerSelection, computerSelection) {
     playerSelection = playerSelection.toLowerCase();
     if (playerSelection === 'rock' && computerSelection === 'scissors') {
         playerScore++;
-        return "You Win! Rock beats scissors!";
+        message.innerHTML = "You Win! Rock beats scissors!" + `${gamePlay(playerSelection, computerPlay())} ` + 
+        `<br>` + `Your Score: ${playerScore}` + `<br>` + `Computer Score: ${computerScore}`;
     } else if (playerSelection === 'rock' && computerSelection === 'paper'){
         computerScore++;
-        return "You Lose! Paper beats rock!";
+        message.innerHTML = "You Lose! Paper beats rock!" + `${gamePlay(playerSelection, computerPlay())} ` + 
+        `<br>` + `Your Score: ${playerScore}` + `<br>` + `Computer Score: ${computerScore}`;
     } else if (playerSelection === 'rock' && computerSelection === 'rock') {
-        return "It's a draw! Rock vs rock.";
+        message.innerHTML = "It's a draw! Rock vs rock." + `${gamePlay(playerSelection, computerPlay())} ` + 
+        `<br>` + `Your Score: ${playerScore}` + `<br>` + `Computer Score: ${computerScore}`;
     } else if (playerSelection === 'scissors' && computerSelection === 'scissors') {
-        return "It's a draw! Scissors vs scissors.";
+        message.innerHTML = "It's a draw! Scissors vs scissors." + `${gamePlay(playerSelection, computerPlay())} ` + 
+        `<br>` + `Your Score: ${playerScore}` + `<br>` + `Computer Score: ${computerScore}`;
     } else if (playerSelection === 'scissors' && computerSelection === 'paper') {
         playerScore++;
-        return "You win! Scissors beats paper!";
+        message.innerHTML = "You win! Scissors beats paper!" + `${gamePlay(playerSelection, computerPlay())} ` + 
+        `<br>` + `Your Score: ${playerScore}` + `<br>` + `Computer Score: ${computerScore}`;
     } else if (playerSelection === 'scissors' && computerSelection === 'rock') {
         computerScore++;
-        return "You lose! rock beats scissors!";
+        message.innerHTML = "You lose! rock beats scissors!" + `${gamePlay(playerSelection, computerPlay())} ` + 
+        `<br>` + `Your Score: ${playerScore}` + `<br>` + `Computer Score: ${computerScore}`;
     } else if (playerSelection === 'paper' && computerSelection === 'scissors') {
         computerScore++;
-        return "You lose! Scissors beats paper!";    
+        message.innerHTML = "You lose! Scissors beats paper!" + `${gamePlay(playerSelection, computerPlay())} ` + 
+        `<br>` + `Your Score: ${playerScore}` + `<br>` + `Computer Score: ${computerScore}`;
     } else if (playerSelection === 'paper' && computerSelection === 'rock') {
         playerScore++;
-        return "You Win! Paper beats rock!";
+        message.innerHTML = "You Win! Paper beats rock!" + `${gamePlay(playerSelection, computerPlay())} ` + 
+        `<br>` + `Your Score: ${playerScore}` + `<br>` + `Computer Score: ${computerScore}`;
     } else if (playerSelection === 'paper' && computerSelection === 'paper') {
-        return "It's a draw! Paper vs paper.";
+        message.innerHTML = "It's a draw! Paper vs paper." + `${gamePlay(playerSelection, computerPlay())} ` + 
+        `<br>` + `Your Score: ${playerScore}` + `<br>` + `Computer Score: ${computerScore}`;
     } else {
         return "error";
     }
@@ -51,7 +60,7 @@ function game(playerSelection) {
     round++;
     currentRound.textContent = `Round ${round}`;
 
-    
+
     if (playerScore > computerScore) {
         message.innerHTML = "Player Wins Match!" + `${gamePlay(playerSelection, computerPlay())} ` + 
         `<br>` + `Your Score: ${playerScore}` + `<br>` + `Computer Score: ${computerScore}`;
