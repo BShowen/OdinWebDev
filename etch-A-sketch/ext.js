@@ -11,10 +11,11 @@ for ( let x = 0; x < 16; x++) {
     const divRow = document.createElement('div');
     divRow.classList.add('divRow');
     for ( let y = 0; y < 16; y++) {
-        const divGridCell = document.createElement('div');
-        divGridCell.classList.add('gridCell');
-        divRow.appendChild(divGridCell);
+        const gridCell = document.createElement('div');
+        gridCell.classList.add('gridCell');
+        divRow.appendChild(gridCell);
     }
     container.appendChild(divRow);
 }
 
+// change color of grid cells on mouse hover

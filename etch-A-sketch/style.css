@@ -1,0 +1,8 @@
+
+.gridCell {
+    display: inline-block;
+    background-color: blue;
+    width: 40px;
+    height: 40px;
+    margin: 1px 1px;
+}
