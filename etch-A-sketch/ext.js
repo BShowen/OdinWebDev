@@ -19,3 +19,18 @@ for ( let x = 0; x < 16; x++) {
 }
 
 // change color of grid cells on mouse hover
+const gridCells = document.querySelectorAll('.gridCell');
+// Helper for gridCell event Listener
+const draw = (cell) => {
+    cell.target.style.background = 'yellow';
+}
+
+gridCells.forEach((gridCell) => {
+    gridCell.addEventListener('mouseover', (e) => {
+        if (e.target.classList = "gridCell") {
+            draw(e);
+        }
+    })
+});
+
+// Enable reset button
