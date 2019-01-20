@@ -1,6 +1,7 @@
 html, body {
     height: 100%;
     width: 100%;
+    background-color: lightgray;
 }
 
 #container {
@@ -8,12 +9,14 @@ html, body {
     height: 80%;
     max-width: 713px;
     width: 80%;
+    min-height: 570px;
     margin: 0 auto;
     /* center vert */
     position: relative;
     top: 1%;
     
     background-color: grey;
+    border-radius: 20px;
 }
 
 #gridContainer {
@@ -25,7 +28,8 @@ html, body {
     position: relative;
     top: 10%;
 
-    background-color: green;
+    border-radius: 20px;
+    background-color: aliceblue;
 }
 
 .divRow {
@@ -36,7 +40,7 @@ html, body {
 
 .gridCell {
     display: inline-block;
-    background-color: blue;
+    background-color: white;
     width: 28px;
     height: 28px;
     margin: 0 auto;
@@ -45,5 +49,5 @@ html, body {
 
 button {
     display: block;
-    margin: 15px auto;
+    margin: 5px auto;
 }
