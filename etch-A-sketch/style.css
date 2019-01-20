@@ -1,20 +1,40 @@
+
 #container {
+    /* center Horiz */
+    height: 80%;
+    width: 80%;
     margin: 0 auto;
-    width: 50%;
+    /* center vert */
+    position: relative;
+    top: 10%;
+    
     background-color: grey;
 }
 
 #gridContainer {
+    /* center horiz */
+    height: 80%;
+    width: 80%;
+    margin: 0 auto;
+    /* center vert */
+    position: relative;
+    top: 10%;
+
     background-color: green;
-    padding-left: 75px;
+}
+
+.divRow {
+    width: 80%;
+    margin: 0 auto;
+    padding: 0;
 }
 
 .gridCell {
     display: inline-block;
     background-color: blue;
-    width: 30px;
-    height: 30px;
-    margin: 0 1px;
+    width: 28px;
+    height: 28px;
+    margin: 0 auto;
 }
 
 button {

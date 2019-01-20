@@ -9,7 +9,7 @@ body.insertBefore(container, script);
 // Add reset button to top
 const btn = document.createElement('button');
 btn.textContent = "Reset";
-container.appendChild(btn);
+body.insertBefore(btn, container);
 btn.addEventListener('click', (e) => {
     gridCells.forEach((gridCell) => {
         gridCell.style.background = 'blue';
