@@ -12,7 +12,7 @@ btn.textContent = "Reset";
 body.insertBefore(btn, container);
 btn.addEventListener('click', (e) => {
     gridCells.forEach((gridCell) => {
-        gridCell.style.background = 'blue';
+        gridCell.style.background = 'white';
     });
 });
 
