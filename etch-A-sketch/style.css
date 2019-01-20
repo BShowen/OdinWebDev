@@ -21,28 +21,28 @@ html, body {
 
 #gridContainer {
     /* center horiz */
-    height: 80%;
-    width: 80%;
+    height: 500px;
+    width: 500px;
     margin: 0 auto;
     /* center vert */
     position: relative;
-    top: 10%;
+    top: 7%;
 
     border-radius: 20px;
     background-color: aliceblue;
 }
 
-.divRow {
-    width: 80%;
-    height: 28px;
+.gridRow {
+    /* width: 80%;
+    height: 28px; */
     margin: 0 auto;
 }
 
 .gridCell {
     display: inline-block;
     background-color: white;
-    width: 28px;
-    height: 28px;
+    /* width: 28px;
+    height: 28px; */
     margin: 0 auto;
     
 }

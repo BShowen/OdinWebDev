@@ -1,10 +1,23 @@
 const body = document.body;
 
+//public variables for use in functions
+const gridRow = createElement('div');
+gridRow.classList.add("gridRow");
+const gridCell = createElement('div');
+gridCell.classList.add("gridCell");
+
+let gridCount = 28;
+
 // create container div
 const container = document.createElement('div');
 const script = document.querySelector('script');
 container.setAttribute("id", "container");
 body.insertBefore(container, script);
+
+// add gridContainer div to container
+const gridContainer = document.createElement('div');
+gridContainer.setAttribute('id', 'gridContainer');
+container.appendChild(gridContainer);
 
 // Add reset button to top
 const btn = document.createElement('button');
@@ -13,24 +26,31 @@ body.insertBefore(btn, container);
 btn.addEventListener('click', (e) => {
     gridCells.forEach((gridCell) => {
         gridCell.style.background = 'white';
+        gridCell.setAttribute("style", `width: ${gridCount + 'px'}; height: ${gridCount + 'px'};`);
     });
 });
 
-// add div grid container
-const gridContainer = document.createElement('div');
-gridContainer.setAttribute('id', 'gridContainer');
-container.appendChild(gridContainer);
+const makeGrid  = (value) => {
+    const gridSize = Math.floor(500/gridCount);
 
-// create 16 x 16 divs
-for ( let x = 0; x < 16; x++) {
-    const divRow = document.createElement('div');
-    divRow.classList.add('divRow');
-    for ( let y = 0; y < 16; y++) {
-        const gridCell = document.createElement('div');
-        gridCell.classList.add('gridCell');
-        divRow.appendChild(gridCell);
+    //remove all content from gridContainer
+    //gridContainer.innerHTML = "";
+    
+    // build gridRows
+    for (let i = 0; i < gridSize; i++) {
+        gridContainer.appendChild(gridRow);
     }
-    gridContainer.appendChild(divRow);
+
+    // fill rows with cells, add gridRow class to rows
+    const gridRows = document.querySelectorAll(".gridRow");
+    gridRow.forEach((row) => {
+        row.appendChild(gridCell);
+    });
+
+    //console.log(gridRows);
+    
+
+    
 }
 
 // change color of grid cells on mouse hover
@@ -47,4 +67,5 @@ gridCells.forEach((gridCell) => {
         }
     })
 });
+
 
