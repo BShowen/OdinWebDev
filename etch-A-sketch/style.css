@@ -1,7 +1,14 @@
 #container {
     margin: 0 auto;
     width: 50%;
+    background-color: grey;
 }
+
+#gridContainer {
+    background-color: green;
+    padding-left: 75px;
+}
+
 .gridCell {
     display: inline-block;
     background-color: blue;

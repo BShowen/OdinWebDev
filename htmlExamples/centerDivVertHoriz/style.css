@@ -1,0 +1,43 @@
+* {
+    box-sizing: border-box;
+}
+
+html, body {
+    /* set hieght so that children hieght can be set */
+    height: 100%;
+    margin: 0;
+}
+
+#container {
+    /* center horizontally */
+    width: 80%;
+    height: 80%;
+    margin: 0 auto;
+    /* center vertically - note top relationship to hieght */
+    position: relative;
+    top: 10%;
+    background-color: green;
+}
+
+#child {
+    /* center horizontally */
+    width: 80%;
+    height: 80%;
+    margin: 0 auto;
+    /* center vertically - note top relationship to hieght*/
+    position: relative;
+    top: 10%;
+    /* padding-top: 5em; */
+    background-color: red;
+}
+
+#grandchild {
+    /* center horizontally */
+    width: 80%;
+    height: 80%;
+    margin: 0 auto;
+    /* center vertically - note top relationship to hieght */
+    position: relative;
+    top: 10%;
+    background-color: aliceblue;
+}
