@@ -10,6 +10,11 @@ const script = document.querySelector('script');
 let gridCount = 28;
 let drawTurnedOn = false;
 
+// Add reset button to top, triggers all function calls
+const btn = document.createElement('button');
+btn.textContent = "Click to Play/Reset";
+body.insertBefore(btn, script);
+
 // set gridCount from user prompt
 const getCanvasSizeFromUser = () => {
     gridCount = prompt("How many drawing cells wide would you like the canvas?", 28);
@@ -75,11 +80,9 @@ const draw = (cell) => {
     cell.target.style.background = 'yellow';
 }
 
-// Add reset button to top, triggers all function calls
-const btn = document.createElement('button');
-btn.textContent = "Reset";
-body.insertBefore(btn, script);
 
+
+// Create board, initiate game
 makeGameBoard();
 
 btn.addEventListener('click', (e) => {
