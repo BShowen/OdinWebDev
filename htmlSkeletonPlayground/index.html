@@ -8,15 +8,24 @@
 </head>
 <body>
     <script>
-        function factorial(value) {
-            let product = 1;
-            while (value > 0) {
-                product *= (value);
-                value --;
+        const palindromes = function(phrase) {
+            let phraseArr = Array.from(phrase.toLowerCase());
+            phraseArr = phraseArr.filter( element => {
+                if (String.charCodeAt(element) >= 97 && String.charCodeAt(element) <= 122) {
+                    return element;
+                }
+            });
+
+            phrase = phraseArr.join('');
+            let result = phraseArr.reverse().join('');
+            
+            if (phrase === result) {
+                return true;
+            } else {
+                return false;
             }
-            console.log(product);
         }
-        factorial(4);
+        palindromes("checking !this ,out");
     </script>
 </body>
 </html>
