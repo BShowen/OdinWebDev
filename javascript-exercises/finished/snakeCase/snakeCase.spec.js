@@ -13,10 +13,10 @@ describe('snakeCase', function() {
   it('works with camel case', function() {
     expect(snakeCase('snakeCase')).toEqual('snake_case');
   });
-  xit('works with kebab case', function() {
+  it('works with kebab case', function() {
     expect(snakeCase('snake-case')).toEqual('snake_case');
   });
-  xit('works with WTF case', function() {
+  it('works with WTF case', function() {
     expect(snakeCase('SnAkE..CaSe..Is..AwEsOmE')).toEqual('snake_case_is_awesome');
   });
 
