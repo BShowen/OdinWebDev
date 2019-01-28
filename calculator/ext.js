@@ -24,7 +24,7 @@ buttons.forEach(button => {
             }
         } else if (btnValue === '=') {
             // reset display screen and evaluate math
-            arithmatic(tempInputArr);
+            operate(tempInputArr);
             display = ''; 
             tempInputArr = [];   
         } else if (btnValue === 'Clear') {
@@ -38,13 +38,19 @@ buttons.forEach(button => {
 
 const isOperator = key => operators.includes(key) ? true : false ;
 
-const arithmatic = arrToProcess => {
+const operate = arrToProcess => {
     // join then split to ensure multidigit numbers are accounted for.
     let figures = arrToProcess.join('');
     figures = figures.split(' ');
     // evaluate string, then print to display
-    let result = eval(figures.join(''));
-    printToDisplay(result);
+    try {
+        let result = eval(figures.join(''));
+        result = result.toFixed(4);
+        printToDisplay(result);
+        
+    } catch (error) {
+        alert(error + " unable to complete as desired, check your equations format");
+    }
     
 }
 
