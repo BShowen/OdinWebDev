@@ -1,35 +1,37 @@
 const buttons = document.querySelectorAll('button');
 const print = document.querySelector('#print');
 const operators = "/*-+";
-let input = '';
+let display = '';
 let tempInputArr = [];
 
-//on event, add input to array?
+// Listen for button presses
 buttons.forEach(button => {
     button.addEventListener('click', (e) => {
         const btnValue = e.target.textContent;
+        // equals and clear will be special cases
         if (btnValue != '=' && btnValue != "Clear") {
+            // push numerical values to display as well as array for evaluation later
             if (!isOperator(btnValue)) {
-                input += btnValue;
+                display += btnValue;
                 tempInputArr.push(btnValue);
-                printToDisplay(input);
+                printToDisplay(display) ;
             } else {
-                input += btnValue;
-                // push operators with spaces to enable easy splitting later
+                // push operator values to display
+                display += btnValue;
+                // push operators with spaces to array to enable easy splitting later
                 tempInputArr.push(` ${btnValue} `);
-                printToDisplay(input);
-                // console.log(tempInputArr);
+                printToDisplay(display);
             }
         } else if (btnValue === '=') {
+            // reset display screen and evaluate math
             arithmatic(tempInputArr);
-            input = ''; 
-            print.textContent = '0';   
-            console.log('equals');
-            // console.log(tempInputArr);
+            display = ''; 
+            tempInputArr = [];   
         } else if (btnValue === 'Clear') {
-            input = '';
+            // reset display screen and variables
+            display = '';
+            tempInputArr = [];
             print.textContent = '0';
-            console.log('Clear');
         }
     });
 });
@@ -37,14 +39,15 @@ buttons.forEach(button => {
 const isOperator = key => operators.includes(key) ? true : false ;
 
 const arithmatic = arrToProcess => {
+    // join then split to ensure multidigit numbers are accounted for.
     let figures = arrToProcess.join('');
     figures = figures.split(' ');
-    // iterate over figures and do the math
-    console.log(figures);
+    // evaluate string, then print to display
+    let result = eval(figures.join(''));
+    printToDisplay(result);
     
 }
 
 const printToDisplay = input => {
     print.textContent = input;
 }
-// console.log(buttons);
