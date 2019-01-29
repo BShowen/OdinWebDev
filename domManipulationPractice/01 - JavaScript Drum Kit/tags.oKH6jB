@@ -1,0 +1,4 @@
+playSound	ext.js	/^function playSound(e) {$/;"	f
+removeTransition	ext.js	/^function removeTransition(e) {$/;"	f
+removeTransition	index-FINISHED.html	/^  function removeTransition(e) {$/;"	f
+playSound	index-FINISHED.html	/^  function playSound(e) {$/;"	f
