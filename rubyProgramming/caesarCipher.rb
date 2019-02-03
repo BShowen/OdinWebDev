@@ -25,4 +25,4 @@ def caesar_cipher(string, shift)
     print result + "\n"
 end
 
-caesar_cipher("work with !specials??", 4)
+caesar_cipher("What a string!", 5)
