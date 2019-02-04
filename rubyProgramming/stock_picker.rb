@@ -22,10 +22,8 @@ def stock_picker(prices)
         i += 1
     end
     
-    print max_gain
-    print "\n"
-    return max_gain
-    
+    return [prices.index(max_gain[0]), prices.index(max_gain[1])] 
+        
 end
 
 
