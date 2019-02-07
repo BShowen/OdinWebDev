@@ -90,9 +90,19 @@ module Enumerable
     end
 
     def my_inject
-        
+        list = self.to_a
+        result = 0
+        list.my_each { |n| 
+            result = yield(result, n)
+        }
+        result
     end
 
+    
+end
+
+def multiply_els(arg)
+    arg.my_inject {|sum, n| sum * n}
 end
 
 # %w[here it is].my_each { |x| print x += " now", "--" }
@@ -120,3 +130,9 @@ end
 # p (1..4).my_map { |i| i*i }
 # p (1..4).my_map { "cat"  }
 
+p (5..10).my_inject {|sum, i| sum + i }
+# p %w{ cat sheep bear }.inject { |memo, word|
+#     memo.length > word.length ? memo : word
+# }
+
+# p multiply_els([2,4,5])
