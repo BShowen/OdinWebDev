@@ -28,7 +28,7 @@ class GameSpace
             character = "O"
             @last_move = "O"
         end
-        
+
         while waiting_for_correct_answer
             case position
             when "top left"
@@ -67,7 +67,7 @@ class GameSpace
                 position = gets.chomp.downcase
             end
         end
-
+        @moves += 1
     end
 
     def is_game_over?
