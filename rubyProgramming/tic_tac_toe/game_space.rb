@@ -1,0 +1,3 @@
+class GameSpace
+    
+end
