@@ -9,6 +9,7 @@ class GameSpace
         @moves = 0
         @last_move = ""
         @winner = ""
+        @record_of_moves = []
     end
 
     def show_board
@@ -30,41 +31,47 @@ class GameSpace
         end
 
         while waiting_for_correct_answer
-            case position
-            when "top left"
-                @top_row[3] = character
-                waiting_for_correct_answer = false
-            when "top center"
-                @top_row[5] = character
-                waiting_for_correct_answer = false
-            when "top right"
-                @top_row[7] = character
-                waiting_for_correct_answer = false
-            when "middle left"
-                @middle_row[3] = character
-                waiting_for_correct_answer = false
-            when "middle center"
-                @middle_row[5] = character
-                waiting_for_correct_answer = false
-            when "middle right"
-                @middle_row[7] = character
-                waiting_for_correct_answer = false
-            when "bottom left"
-                @bottom_row[3] = character
-                waiting_for_correct_answer = false
-            when "bottom center"
-                @bottom_row[5] = character
-                waiting_for_correct_answer = false
-            when "bottom right"
-                @bottom_row[7] = character
-                waiting_for_correct_answer = false
+            if @record_of_moves.include?(position)
+                puts "that space has already been taken, please choose again..."
+                position = gets.chomp
             else
-                puts "error, invalid move"
-                puts " Examples: 'top left', 'top center', 'top right'\n
-                    'middle left' middle center' 'middle right' \n
-                    'bottom left' bottom center' bottom right'"
-                puts "Please choose again: "
-                position = gets.chomp.downcase
+                @record_of_moves << position
+                case position
+                when "top left"
+                    @top_row[3] = character
+                    waiting_for_correct_answer = false
+                when "top center"
+                    @top_row[5] = character
+                    waiting_for_correct_answer = false
+                when "top right"
+                    @top_row[7] = character
+                    waiting_for_correct_answer = false
+                when "middle left"
+                    @middle_row[3] = character
+                    waiting_for_correct_answer = false
+                when "middle center"
+                    @middle_row[5] = character
+                    waiting_for_correct_answer = false
+                when "middle right"
+                    @middle_row[7] = character
+                    waiting_for_correct_answer = false
+                when "bottom left"
+                    @bottom_row[3] = character
+                    waiting_for_correct_answer = false
+                when "bottom center"
+                    @bottom_row[5] = character
+                    waiting_for_correct_answer = false
+                when "bottom right"
+                    @bottom_row[7] = character
+                    waiting_for_correct_answer = false
+                else
+                    puts "error, invalid move"
+                    puts " Examples: 'top left', 'top center', 'top right'\n
+                        'middle left' middle center' 'middle right' \n
+                        'bottom left' bottom center' bottom right'"
+                    puts "Please choose again: "
+                    position = gets.chomp.downcase
+                end
             end
         end
         @moves += 1
