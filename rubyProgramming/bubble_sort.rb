@@ -3,15 +3,14 @@ def bubble_sort(array)
 
     array.length.times { 
         array.each_index { |i|
-            if i == 0
-                # skip first array value
-            elsif array[i-1] > array[i]
+            next if i == 0
+            if array[i-1] > array[i]
                 array[i-1], array[i] = array[i], array[i-1]
             end
         }
     }
 
-    return array
+    array #Use implicit return.
 
 end
 
@@ -19,19 +18,17 @@ def bubble_sort_by(array)
     
     array.length.times { 
         array.each_index { |i|
-            if i == 0
-                # skip first array value
-            else
-                block = yield(array[i-1], array[i])
-                # puts "block value #{block}"
-                if block > 0
-                    array[i-1], array[i] = array[i], array[i-1]
-                end
+            next if i == 0
+            block = yield(array[i-1], array[i])
+            # puts "block value #{block}"
+            if block > 0
+                array[i-1], array[i] = array[i], array[i-1]
             end
+
         }
     }
 
-    return array
+    array #implicit return
 end
 
 p bubble_sort([9,8,7,6,5,4,3,2,1]) 
